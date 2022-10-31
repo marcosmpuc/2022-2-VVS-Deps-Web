@@ -8,20 +8,35 @@
 		<version>2.7.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.emprestimos</groupId>
-	<artifactId>calculadora</artifactId>
+	<groupId>com.bcopstein</groupId>
+	<artifactId>Emprestimos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>calculadora</name>
-	<description>Calcula empréstimos</description>
+	<name>Emprestimos</name>
+	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		
+		<!--  Gson: Java to JSON conversion -->
+    	<dependency>
+      		<groupId>com.google.code.gson</groupId>
+      		<artifactId>gson</artifactId>
+      		<version>2.9.1</version>
+      		<scope>compile</scope>
+    	</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
