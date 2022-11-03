@@ -22,14 +22,6 @@ class CalculoDeJurosTest {
         Assertions.assertTrue(calc.comSeguro());
     }
 
-    @Test
-    void setTaxaSeguro() {
-    }
-
-    @Test
-    void getTaxaSeguro() {
-    }
-
     @ParameterizedTest
     @CsvSource({
             "1000,5,6,30060",
@@ -53,11 +45,21 @@ class CalculoDeJurosTest {
 
     @ParameterizedTest
     @CsvSource({
-            "10000,0.05,24,30489.34",
-            "20000,0.05,30,94869.82"
+            "10000,0.05,24,30489.34641267438",
+            "20000,0.05,30,94869.82345826503"
     })
     void jurosCompostosComSeguroTeste(double valor, double taxa, int nroParcelas, double resp) {
         CalculoDeJuros calc = new CalculoDeJuros();
+        Assertions.assertEquals(resp, calc.jurosEmprestimoJurosCompostos(valor,taxa,nroParcelas));
+    }
+    @ParameterizedTest
+    @CsvSource({
+            "10000,0.05,24,22250.999437136998",
+            "20000,0.05,30,66438.84750301324"
+    })
+    void jurosCompostosSemSeguroTeste(double valor, double taxa, int nroParcelas, double resp) {
+        CalculoDeJuros calc = new CalculoDeJuros();
+        calc.setSeguro(false);
         Assertions.assertEquals(resp, calc.jurosEmprestimoJurosCompostos(valor,taxa,nroParcelas));
     }
 }

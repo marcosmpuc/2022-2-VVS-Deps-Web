@@ -8,30 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class EmprestimoTest {
 
     @Test
-    void isSegurado() {
-    }
-
-    @Test
-    void isJurosCompostos() {
-    }
-
-    @Test
-    void getValor() {
-    }
-
-    @Test
-    void getTaxa() {
-    }
-
-    @Test
-    void getNroParcelas() {
-    }
-
-    @Test
-    void custoTotal() {
-    }
-
-    @Test
     void custoTotalEmprestimoJurosSimples(){
         CalculoDeJuros calc = new CalculoDeJuros();
         Emprestimo emprestimoJS = new Emprestimo.Builder(calc).jurosSimples().build();
@@ -43,7 +19,7 @@ class EmprestimoTest {
     void custoTotalEmprestimoJurosCompostos(){
         CalculoDeJuros calc = new CalculoDeJuros();
         Emprestimo emprestimoJS = new Emprestimo.Builder(calc).jurosCompostos().build();
-        Assertions.assertEquals(1306.18, emprestimoJS.custoTotal());
+        Assertions.assertEquals(1306.1819376531253, emprestimoJS.custoTotal());
     }
     @Test
     void valorParcelaTeste(){
