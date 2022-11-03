@@ -10,7 +10,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest
 @AutoConfigureMockMvc
 class EmprestimoControllerTest {
 
@@ -31,6 +31,15 @@ class EmprestimoControllerTest {
     }
 
     @Test
-    void emprestimoJurosCompostos() {
+    void emprestimoJurosCompostos() throws Exception {
+        RequestBuilder rb = MockMvcRequestBuilders.get("/emprestimo/jurosCompostos?valor=1000&parcelas=5&taxa=0.035");
+        MvcResult result = this.mockMvc.perform(rb).andReturn();
+
+        EmprestimoDTO espDto = new EmprestimoDTO(true,true,1000,0.035,5,
+                1306.1819376531253, 261.23638753062505);
+
+        Gson gson = new Gson();
+        String espJasonS = gson.toJson(espDto);
+        Assertions.assertEquals(espJasonS, result.getResponse().getContentAsString());
     }
 }
