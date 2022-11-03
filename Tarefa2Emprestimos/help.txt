@@ -3,6 +3,7 @@
 Com seguro, valor > 0, taxa padrão, 1 parcela, juros simples
 Com seguro, valor > 0, taxa padrão, 1 parcela, juros compostos
 Sem seguro, valor > 0, taxa padrão, 1 parcela, juros simples
+Sem seguro, valor > 0, taxa padrão, 1 parcela, juros compostos
 ## Casos inválidos
 valor = 0
 valor < 0
