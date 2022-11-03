@@ -1,16 +1,18 @@
 # Casos de Teste
 ## Casos válidos
-Com seguro, valor > 0, taxa padrão, 1 parcela, juros simples
-Com seguro, valor > 0, taxa padrão, 1 parcela, juros compostos
-Sem seguro, valor > 0, taxa padrão, 1 parcela, juros simples
-Sem seguro, valor > 0, taxa padrão, 1 parcela, juros compostos
+Classe Calculo de Juros
+Fizemos 4 testes com valores válidos, 2 para juros compostos, sendo um deles sem seguro e outro com seguro e 2 para juros simples
+sendo um deles também sem seguro.
+
+Classe Controller
+Fizemos 2 testes um para emprestimo com juros simples e outro para juros compostos.
+
+Classe Emprestimos
+Foram feitos 4 testes 2 para testar emprestimo juros simples e compostos, os outros  testes fizemos para testar a função valor da parela.
+
 ## Casos inválidos
-valor = 0
-valor < 0
-taxa = 0
-taxa < 0
-0 parcelas
-< 0 parcelas
+
+Não fizemos testes para casos inválidos, pois não constava na definição.
 
 # Getting Started
 
